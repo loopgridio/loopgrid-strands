@@ -1,0 +1,47 @@
+[build-system]
+requires = ["hatchling>=1.27"]
+build-backend = "hatchling.build"
+
+[project]
+name = "loopgrid-strands"
+version = "0.1.0"
+description = "Signed, independently verifiable decision evidence for Strands Agents using LoopGrid"
+readme = "README.md"
+requires-python = ">=3.10"
+license = "Apache-2.0"
+authors = [{ name = "LoopGrid" }]
+keywords = ["strands-agents", "ai-agents", "evidence", "audit", "provenance", "loopgrid"]
+classifiers = [
+  "Development Status :: 4 - Beta",
+  "Intended Audience :: Developers",
+  "License :: OSI Approved :: Apache Software License",
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3.10",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12",
+  "Programming Language :: Python :: 3.13",
+  "Programming Language :: Python :: 3.14",
+]
+dependencies = [
+  "strands-agents>=1.57.1,<2",
+  "loopgrid>=0.8,<0.9",
+]
+
+[project.optional-dependencies]
+dev = [
+  "pytest>=8,<9",
+  "build>=1.2,<2",
+]
+
+[project.urls]
+Homepage = "https://loopgrid.io"
+Documentation = "https://loopgrid.io/docs/"
+Repository = "https://github.com/loopgridio/loopgrid-strands"
+Issues = "https://github.com/loopgridio/loopgrid-strands/issues"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/loopgrid_strands"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-q"

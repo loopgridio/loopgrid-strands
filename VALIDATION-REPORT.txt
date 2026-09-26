@@ -1,0 +1,26 @@
+LoopGrid x Strands Agents v0.1.0 — release-candidate validation
+
+Built against:
+- LoopGrid Core contract: 0.8.1-design-partner
+- LoopGrid Python SDK line: 0.8.x
+- Strands Agents current line checked during build: 1.57.1
+
+Completed in build environment:
+- Current native Strands Plugin/@hook lifecycle cross-checked against official docs/source
+- LoopGrid Core endpoint and lifecycle rules cross-checked against uploaded 0.8.1 source
+- Python compileall: PASS
+- Framework-independent plugin logic tests with Strands API stubs: 13/13 PASS
+- Secret scan/manual package inspection: no credentials or .env secrets included
+
+Must be completed on a machine with PyPI access before v0.1.0 is frozen/published:
+- install actual strands-agents>=1.57.1,<2 and loopgrid>=0.8,<0.9
+- run full pytest including native Strands Agent + Plugin + tool + deterministic custom Model test
+- run local LoopGrid Core E2E demo
+- confirm lifecycle=evidence_complete, coverage=100, verification.valid=true, failures=[]
+- GitHub Actions green
+- PyPI release
+- Strands integrations catalog submission
+
+This report is intentionally conservative. Runtime/E2E claims are not made until observed.
+
+- Strands Plugin constructor regression: PASS (super().__init__ initializes native hook registry)
